@@ -1,5 +1,6 @@
 const express = require('express');
 const homeworkList = require('../tools/sequelize')
+const logger = require('../middlewares/logger');
 
 const router = express.Router();
 
@@ -23,7 +24,8 @@ router.get('/api/toggle_finish_state', (req, res) => {
       }
     })
     res.sendStatus(200);
-  }).catch(() => {
+  }).catch((e) => {
+    logger.logger.error(e);
     res.sendStatus(400);
   })
 })

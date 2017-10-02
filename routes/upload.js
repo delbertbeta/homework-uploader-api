@@ -51,13 +51,14 @@ router.post('/api/upload', uploader.single('file'), (req, res) => {
       }
       let file = req.file;
       fileHandle(file, studentInfo, homeworkInfo);
+      logger.logger.warn(req.ip + ' has uploaded for ' + studentInfo.name + ' at ' + homeworkInfo.name);
       res.sendStatus(200);
     }).catch((e) => {
-      console.log(e);
+      logger.logger.error(e);
       res.sendStatus(400);
     })
   } catch (e) {
-    console.log(e);
+    logger.logger.error(e);
     res.sendStatus(400);
   }
 });
@@ -80,12 +81,7 @@ let fileHandle = function (file, studentInfo, homeworkInfo) {
     fs.writeFileSync(localFile, file.buffer);
   } else {
     let pathString = path.resolve('./upload/', homeworkInfo.name);
-    mkdirp(pathString, (err) => {
-      if (err) {
-        logger.logger.error(err);
-        throw err;
-      }
-    });
+    mkdirp.sync(pathString);
     let fileName = path.parse(file.originalname);
     let fileString = path.join(pathString, name + fileName.ext);
     let localFile = fs.openSync(fileString, 'w', 666);

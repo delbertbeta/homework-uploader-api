@@ -103,3 +103,50 @@
 [2017-10-02 23:11:48.042] [INFO] HomeworkUploader - ::1(localhost) POST /api/upload
 [2017-10-02 23:13:14.825] [INFO] HomeworkUploader - Starting server at http://localhost:4000/
 [2017-10-02 23:13:18.263] [INFO] HomeworkUploader - ::1(localhost) POST /api/upload
+[2017-10-02 23:25:37.423] [INFO] HomeworkUploader - Starting server at http://localhost:4000/
+[2017-10-02 23:31:49.137] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/
+[2017-10-02 23:36:24.610] [INFO] HomeworkUploader - ::1(localhost) GET /api/get_all_info
+[2017-10-02 23:51:55.303] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/get_all_info
+[2017-10-02 23:53:13.902] [INFO] HomeworkUploader - ::1(localhost) GET /api/get_all_info
+[2017-10-02 23:54:18.696] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/get_all_info
+[2017-10-02 23:55:53.981] [INFO] HomeworkUploader - ::1(localhost) GET /api/get_all_info
+[2017-10-02 23:56:46.070] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/get_all_info
+[2017-10-02 23:57:06.657] [INFO] HomeworkUploader - ::1(localhost) GET /api/get_all_info
+[2017-10-02 23:57:55.583] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) POST /api/add_homework
+[2017-10-02 23:58:32.553] [INFO] HomeworkUploader - Starting server at http://localhost:4000/
+[2017-10-02 23:58:36.823] [INFO] HomeworkUploader - ::1(localhost) POST /api/add_homework
+[2017-10-02 23:59:13.308] [INFO] HomeworkUploader - Starting server at http://localhost:4000/
+[2017-10-02 23:59:14.115] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) POST /api/add_homework
+[2017-10-03 00:00:58.270] [INFO] HomeworkUploader - Starting server at http://localhost:4000/
+[2017-10-03 00:01:19.819] [INFO] HomeworkUploader - ::1(localhost) POST /api/add_homework
+[2017-10-03 00:02:41.899] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/get_all_info
+[2017-10-03 00:07:07.629] [INFO] HomeworkUploader - ::1(localhost) GET /api/toggleFinishState?id=1
+[2017-10-03 00:07:25.760] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/get_all_info
+[2017-10-03 00:07:33.263] [INFO] HomeworkUploader - ::1(localhost) GET /api/toggle_finish_state?id=1
+[2017-10-03 00:07:42.477] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/toggle_finish_state?id=2
+[2017-10-03 00:09:14.738] [INFO] HomeworkUploader - ::1(localhost) GET /api/toggle_finish_state?id=2
+[2017-10-03 00:24:58.914] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/get_homework_list
+[2017-10-03 00:26:09.800] [INFO] HomeworkUploader - ::1(localhost) GET /api/verify_student_number
+[2017-10-03 00:26:41.852] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/get_homework_list
+[2017-10-03 00:26:48.797] [INFO] HomeworkUploader - ::1(localhost) GET /api/get_all_info
+[2017-10-03 00:27:01.168] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/verify_student_number
+[2017-10-03 00:27:53.648] [INFO] HomeworkUploader - ::1(localhost) GET /api/get_homework_list
+[2017-10-03 00:28:03.245] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/verify_student_number?id=201630666660
+[2017-10-03 00:28:08.958] [INFO] HomeworkUploader - ::1(localhost) POST /api/upload
+[2017-10-03 00:30:05.525] [INFO] HomeworkUploader - Starting server at http://localhost:4000/
+[2017-10-03 00:30:13.732] [INFO] HomeworkUploader - Starting server at http://localhost:4000/
+[2017-10-03 00:31:01.530] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) POST /api/upload
+[2017-10-03 00:32:08.767] [INFO] HomeworkUploader - ::1(localhost) GET /api/get_homework_list
+[2017-10-03 00:32:28.129] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/verify_student_number?id=201630666660
+[2017-10-03 00:33:11.165] [INFO] HomeworkUploader - ::1(localhost) POST /api/upload
+[2017-10-03 00:35:44.904] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/get_homework_list
+[2017-10-03 00:35:53.235] [INFO] HomeworkUploader - ::1(localhost) GET /api/verify_student_number?id=201630666660
+[2017-10-03 00:35:55.749] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) POST /api/upload
+[2017-10-03 00:36:40.165] [INFO] HomeworkUploader - ::1(localhost) POST /api/upload
+[2017-10-03 00:37:24.711] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) GET /api/get_homework_list
+[2017-10-03 00:37:57.582] [INFO] HomeworkUploader - ::1(localhost) GET /api/verify_student_number?id=201630666660
+[2017-10-03 00:38:20.841] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) POST /api/upload
+[2017-10-03 00:38:43.625] [INFO] HomeworkUploader - ::1(localhost) POST /api/upload
+[2017-10-03 00:46:41.679] [INFO] HomeworkUploader - Starting server at http://localhost:4000/
+[2017-10-03 00:47:02.507] [INFO] HomeworkUploader - ::ffff:127.0.0.1(localhost) POST /api/upload
+[2017-10-03 00:47:02.586] [WARN] HomeworkUploader - ::ffff:127.0.0.1has uploaded for 邹盛熠 at 123123

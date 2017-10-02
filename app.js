@@ -3,6 +3,7 @@ const app = express();
 const logger = require('./middlewares/logger');
 
 app.use(logger.logVisitInfo);
+app.set('trust proxy', 'loopback');
 
 app.get('/api/get_all_info', require('./routes/getAllInfo'));
 app.get('/api/get_homework_list', require('./routes/getHomeworkList'));
