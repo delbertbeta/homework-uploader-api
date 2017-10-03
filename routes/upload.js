@@ -19,7 +19,7 @@ const router = express.Router();
 
 router.post('/api/upload', uploader.single('file'), (req, res) => {
   try {
-    console.log(req.body.info);
+    // console.log(req.body.info);
     let info = JSON.parse(req.body.info);
     let studentInfo = verifier.getInfo(info.studentNumber);
     if (studentInfo === null) {
@@ -66,8 +66,10 @@ router.post('/api/upload', uploader.single('file'), (req, res) => {
 
 let fileHandle = function (file, studentInfo, homeworkInfo) {
   let name = studentInfo.student_number + '-' + '软件4班' + '-' + studentInfo.name;
-  if (homeworkInfo.create_folder === true) {
+  createFolder = homeworkInfo.create_folder;
+  if (createFolder == true || createFolder == 1) {
     let pathString = path.resolve('./upload/', homeworkInfo.name, name);
+    // console.log(pathString);
     mkdirp.sync(pathString);
     let fileName = path.parse(file.originalname);
     let fileString = path.join(pathString, file.originalname);
@@ -79,6 +81,7 @@ let fileHandle = function (file, studentInfo, homeworkInfo) {
       localFile = fs.openSync(fileString, 'w', 666);
     }
     fs.writeFileSync(localFile, file.buffer);
+    logger.logger.warn("write to " + fileString);
   } else {
     let pathString = path.resolve('./upload/', homeworkInfo.name);
     mkdirp.sync(pathString);
@@ -86,6 +89,7 @@ let fileHandle = function (file, studentInfo, homeworkInfo) {
     let fileString = path.join(pathString, name + fileName.ext);
     let localFile = fs.openSync(fileString, 'w', 666);
     fs.writeFileSync(localFile, file.buffer);
+    logger.logger.warn("write to " + fileString);
   }
 }
 
