@@ -5,9 +5,9 @@ const router = express.Router();
 
 router.get('/api/get_homework_list', (req, res) => {
   homeworkList.findAll({
-    attributes: ['id', 'name', 'multifile'],
+    attributes: ['id', 'name', 'multifile', 'ddl', 'tip'],
     order: [
-      ['id', 'DESC']
+      ['ddl', 'DESC']
     ],
     where: {
       finished: false

@@ -14,7 +14,9 @@ router.post('/api/add_homework', bodyParser.json(), (req, res) => {
       name: homeworkItem.name,
       multifile: homeworkItem.multifile,
       create_folder: homeworkItem.createFolder,
-      uploaded_list: '[]'
+      uploaded_list: '[]',
+      ddl: homeworkItem.ddl,
+      tip: homeworkItem.tip
     })
     res.sendStatus(200);
   } catch(e) {
