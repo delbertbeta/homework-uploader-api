@@ -26,15 +26,15 @@ const storage = multer.diskStorage({
     }).then((result) => {
       req.studentInfo = studentInfo;
       req.homeworkInfo = result;
-      if (result.create_folder === 1) {
+      if (result.create_folder === true) {
         let pathString = path.resolve('./upload/', result.name, studentInfo.student_number + '-' + '软件4班' + '-' + studentInfo.name);
-        if (fs.existsSync(pathString)) {
+        if (!fs.existsSync(pathString)) {
           mkdirp.sync(pathString);
         }
         cb(null, pathString);
       } else {
         let pathString = path.resolve('./upload/', result.name);
-        if (fs.existsSync(pathString)) {
+        if (!fs.existsSync(pathString)) {
           mkdirp.sync(pathString);
         }
         cb(null, pathString);
@@ -42,7 +42,7 @@ const storage = multer.diskStorage({
     })
   },
   filename: function (req, file, cb) {
-    if (req.homework_info.create_folder === 1) {
+    if (req.homeworkInfo.create_folder === true) {
       cb(null, file.originalname);
     } else {
       cb(null, req.studentInfo.student_number + '-' + '软件4班' + '-' + req.studentInfo.name + path.extname(file.originalname));
