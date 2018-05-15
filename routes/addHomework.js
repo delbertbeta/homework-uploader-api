@@ -8,7 +8,6 @@ const router = express.Router();
 router.post('/api/add_homework', bodyParser.json(), (req, res) => {
   let homeworkItem;
   try {
-    console.log(req.body)
     homeworkItem = req.body;
     homeworkList.create({
       name: homeworkItem.name,

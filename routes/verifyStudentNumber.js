@@ -8,10 +8,7 @@ const router = express.Router();
 router.get('/api/verify_student_number', (req, res) => {
   let id = req.query.id;
   let homework = req.query.homework;
-  if (para === undefined) {
-    res.sendStatus(401);
-  }
-  if (verifier.verifier(para)) {
+  if (verifier.verifier(id)) {
     const obj = Upload.findAll({
       where: {
         [Op.and]: [{
@@ -24,12 +21,14 @@ router.get('/api/verify_student_number', (req, res) => {
       },
       include: [{
         model: HomeworkList,
-        through: {
-          attributes: ['target']
-        }
+        // through: {
+        //   attributes: ['target']
+        // }
       }]
-    });
-    res.send(obj);
+    }).then(result => {
+      res.send(result);
+    })
+    
   } else {
     res.sendStatus(401);
   }

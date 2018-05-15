@@ -4,7 +4,7 @@ const Upload = require('../tools/sequelize').Upload;
 const router = express.Router();
 
 router.get('/api/get_uploaded_list', (req, res) => {
-  let id = req.params.id;
+  let id = req.query.id;
   Upload.findAll({
     attributes: ['who'],
     group: ['who'],
@@ -12,7 +12,9 @@ router.get('/api/get_uploaded_list', (req, res) => {
       target: id
     }
   }).then(result => {
-    res.send(result);
+    res.send(result.map(v => {
+      return v.who;
+    }));
   })
 })
 
