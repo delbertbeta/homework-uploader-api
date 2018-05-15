@@ -57,48 +57,55 @@ const uploader = multer({
 const router = express.Router();
 
 router.post('/api/upload', uploader.single('file'), (req, res) => {
-  let homeworkInfo = result;
-  Upload.create({
+  let {
+    studentInfo,
+    homeworkInfo,
+    file
+  } = req;
 
+  Upload.create({
+    who: studentInfo.name,
+    student_number: studentInfo.student_number,
+    target: homeworkInfo.id,
+    originalFile: file.originalname,
+    storageFile: file.path
   })
+
   logger.logger.warn("write to " + req.file.path);
   logger.logger.warn(req.ip + ' has uploaded for ' + studentInfo.name + ' at ' + homeworkInfo.name);
   res.sendStatus(200);
-}).catch((e) => {
-  logger.logger.error(e);
-  res.sendStatus(400);
 });
 
 
-let fileHandle = function (file, studentInfo, homeworkInfo) {
-  let name = studentInfo.student_number + '-' + '软件4班' + '-' + studentInfo.name;
-  createFolder = homeworkInfo.create_folder;
-  if (createFolder == true || createFolder == 1) {
-    let pathString = path.resolve('./upload/', homeworkInfo.name, name);
-    // console.log(pathString);
-    mkdirp.sync(pathString);
-    let fileName = path.parse(file.originalname);
-    let fileString = path.join(pathString, file.originalname);
-    let localFile;
-    if (!fs.existsSync(fileString)) {
-      localFile = fs.openSync(fileString, 'w', 666);
-    } else {
-      fileString = path.join(pathString, fileName.name + '_' + Date.now() + fileName.ext);
-      localFile = fs.openSync(fileString, 'w', 666);
-    }
-    fs.writeFileSync(localFile, file.buffer);
-    fs.closeSync();
-    logger.logger.warn("write to " + fileString);
-  } else {
-    let pathString = path.resolve('./upload/', homeworkInfo.name);
-    mkdirp.sync(pathString);
-    let fileName = path.parse(file.originalname);
-    let fileString = path.join(pathString, name + fileName.ext);
-    let localFile = fs.openSync(fileString, 'w', 666);
-    fs.writeFileSync(localFile, file.buffer);
-    fs.closeSync();
-    logger.logger.warn("write to " + fileString);
-  }
-}
+// let fileHandle = function (file, studentInfo, homeworkInfo) {
+//   let name = studentInfo.student_number + '-' + '软件4班' + '-' + studentInfo.name;
+//   createFolder = homeworkInfo.create_folder;
+//   if (createFolder == true || createFolder == 1) {
+//     let pathString = path.resolve('./upload/', homeworkInfo.name, name);
+//     // console.log(pathString);
+//     mkdirp.sync(pathString);
+//     let fileName = path.parse(file.originalname);
+//     let fileString = path.join(pathString, file.originalname);
+//     let localFile;
+//     if (!fs.existsSync(fileString)) {
+//       localFile = fs.openSync(fileString, 'w', 666);
+//     } else {
+//       fileString = path.join(pathString, fileName.name + '_' + Date.now() + fileName.ext);
+//       localFile = fs.openSync(fileString, 'w', 666);
+//     }
+//     fs.writeFileSync(localFile, file.buffer);
+//     fs.closeSync();
+//     logger.logger.warn("write to " + fileString);
+//   } else {
+//     let pathString = path.resolve('./upload/', homeworkInfo.name);
+//     mkdirp.sync(pathString);
+//     let fileName = path.parse(file.originalname);
+//     let fileString = path.join(pathString, name + fileName.ext);
+//     let localFile = fs.openSync(fileString, 'w', 666);
+//     fs.writeFileSync(localFile, file.buffer);
+//     fs.closeSync();
+//     logger.logger.warn("write to " + fileString);
+//   }
+// }
 
 module.exports = router;

@@ -1,0 +1,19 @@
+const express = require('express');
+const Upload = require('../tools/sequelize').Upload;
+
+const router = express.Router();
+
+router.get('/api/get_uploaded_list', (req, res) => {
+  let id = req.params.id;
+  Upload.findAll({
+    attributes: ['who'],
+    group: ['who'],
+    where: {
+      target: id
+    }
+  }).then(result => {
+    res.send(result);
+  })
+})
+
+module.exports = router;
