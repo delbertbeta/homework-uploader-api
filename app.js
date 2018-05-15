@@ -3,7 +3,9 @@ const app = express();
 const logger = require('./middlewares/logger');
 const sequelize = require('./tools/sequelize');
 
-sequelize.sync();
+sequelize.Orignal.sync({
+  force: true
+});
 
 app.use(logger.logVisitInfo);
 app.set('trust proxy', 'loopback');

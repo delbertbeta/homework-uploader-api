@@ -1,5 +1,5 @@
 const express = require('express');
-const homeworkList = require('../tools/sequelize')
+const homeworkList = require('../tools/sequelize').HomeworkList
 const bodyParser = require('body-parser')
 const logger = require('../middlewares/logger');
 
@@ -14,7 +14,6 @@ router.post('/api/add_homework', bodyParser.json(), (req, res) => {
       name: homeworkItem.name,
       multifile: homeworkItem.multifile,
       create_folder: homeworkItem.createFolder,
-      uploaded_list: '[]',
       ddl: homeworkItem.ddl,
       tip: homeworkItem.tip
     })

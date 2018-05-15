@@ -1,5 +1,5 @@
 const express = require('express');
-const homeworkList = require('../tools/sequelize')
+const homeworkList = require('../tools/sequelize').HomeworkList
 const logger = require('../middlewares/logger');
 
 const router = express.Router();

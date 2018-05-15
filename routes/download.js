@@ -1,5 +1,5 @@
 const express = require('express');
-const homeworkList = require('../tools/sequelize')
+const homeworkList = require('../tools/sequelize').HomeworkList;
 const zipFolder = require('zip-folder')
 const path = require('path')
 const fs = require('fs')
