@@ -68,7 +68,8 @@ router.post('/api/upload', uploader.single('file'), (req, res) => {
     student_number: studentInfo.student_number,
     target: homeworkInfo.id,
     originalFile: file.originalname,
-    storageFile: file.path
+    storageFile: file.path,
+    fileSize: file.size
   })
 
   logger.logger.warn("write to " + req.file.path);
