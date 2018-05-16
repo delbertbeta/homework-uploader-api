@@ -10,7 +10,10 @@ router.get('/api/get_uploaded_list', (req, res) => {
     group: ['who'],
     where: {
       target: id
-    }
+    },
+    order: [
+      ['id', 'DESC']
+    ],
   }).then(result => {
     res.send(result.map(v => {
       return v.who;
