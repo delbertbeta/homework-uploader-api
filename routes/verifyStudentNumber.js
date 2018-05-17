@@ -21,10 +21,10 @@ router.get('/api/verify_student_number', (req, res) => {
       },
       include: [{
         model: HomeworkList,
-        // through: {
-        //   attributes: ['target']
-        // }
-      }]
+      }],
+      order: [
+        ['id', 'DESC']
+      ]
     }).then(result => {
       res.send(result);
     })

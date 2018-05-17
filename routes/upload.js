@@ -16,9 +16,9 @@ const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     let info = JSON.parse(req.body.info);
     let studentInfo = verifier.getInfo(info.studentNumber);
-    if (studentInfo === null) {
-      throw "no such student.";
-    }
+    // if (studentInfo === null) {
+    //   req.error = true;
+    // }
     HomeworkList.findOne({
       where: {
         id: info.homework
