@@ -7,7 +7,7 @@ router.get('/api/get_homework_list', (req, res) => {
   homeworkList.findAll({
     attributes: ['id', 'name', 'multifile', 'ddl', 'tip'],
     order: [
-      ['ddl', 'DESC']
+      ['ddl', 'ASC']
     ],
     where: {
       finished: false
