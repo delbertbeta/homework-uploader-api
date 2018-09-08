@@ -21,13 +21,15 @@ cd homework-uploader-api
 npm install
 ```
 
-4. Install MariaDB or MySQL server
+4. Install MariaDB or MySQL server (Optional)
+
+**Now we support SQLite, MariaDB and MySQL is optional now.**
 
 Just follow your own way to install it and create a database and a user for the api service.
 
-5. Fill in the blank in the config.js
+5. Rename config.example.js to config.js and fill in the blank
 
-Fill it with your database name, username, password, url.
+Fill it with your database type, name, username, password, url.
 
 6. Start the API
 
