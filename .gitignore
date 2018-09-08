@@ -4,3 +4,4 @@ logs/*
 !.gitkeep
 config.js
 data/db.sqlite
+package-lock.json
